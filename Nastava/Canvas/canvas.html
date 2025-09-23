@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+</head>
+<body>
+    <H3>HTML Canvas</H3>
+    <canvas id="mojCanvas" width="600" height="600" style="border: 2px solid black;">
+    </canvas>
+    <script>
+        let c = document.getElementById("mojCanvas");
+        let ctx = c.getContext("2d");
+
+        // pravokutnik
+
+        ctx.beginPath();
+        ctx.rect(0,0,350,250);
+        ctx.strokeStyle="red";
+        ctx.stroke();
+        ctx.fillStyle="yellow"
+        ctx.fill();
+
+        // krug
+         ctx.beginPath();
+         ctx.arc(400,400,100,0,2*Math.PI);
+         ctx.fillStyle="green"
+        ctx.fill();
+
+    </script>
+</body>
+</html>
