@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number guessing game</title>
+
+     <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <h1>Pogodi broj od 1 do 100!</h1>
+
+    <form id="forma" onsubmit="guess(event)">
+        <label for="numbIn" > Unesi broj:</label>
+        <input type="number" id="numbIn" min="1" max ="100" required>
+        <button type="submit" >Pogodi</button>
+        <button type="button" onclick="NewGame()">Nova igra</button>
+    </form>
+
+    <div id="msg">
+
+    </div>
+    <div id="try">
+        <p id="trxLb">Pokušaji:0</p>
+    </div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
