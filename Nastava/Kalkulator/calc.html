@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINI Kalkulator</title>
+</head>
+<body>
+    
+    <div>
+        <h1>Mini Kalkulator</h1>
+
+        <br>
+
+        <form id="forma">
+            <label for="prvi">Prvi Broj:</label>
+            <input type="number" id="prvi">
+            <hr width="0">
+            <label for="drugi">Drugi Broj:</label>
+            <input type="number" id = "drugi">
+        </form>
+
+        <br>
+
+        <button onclick="zbroj()">Zbroji</button>
+        <button onclick="oduzmi()">Oduzmi</button>
+        <button onclick="div()">Podijeli</button>
+        <button onclick="mnoz()">Pomnoži</button>
+        <button oonclick="window.location.reload()">CE</button>
+        
+        <div>
+            <h1 style="margin-left: 10%;">Rezultat</h1>
+            <p id="rez" style="margin-left: 10%;"></p>
+        </div>
+
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
