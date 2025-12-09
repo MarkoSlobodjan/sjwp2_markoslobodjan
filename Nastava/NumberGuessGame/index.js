@@ -31,3 +31,11 @@ function NewGame(){
     count =0;
     lab.innerHTML = "Pokušaji: 0!"
 }
+
+
+
+
+let a =document.querySelectorAll("li");
+for (let i = 0; i<a.length;i++){
+    a[i].textContent ="Stavka";
+}
