@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elektrotehnički alati</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <h1>Elektrotehnički alati</h1>
+        <div>
+            <h3>OHMOV ZAKON</h3>
+
+            <form id="forma">
+                <label>Unesi otpor:</label>
+                <input>
+                <br>
+                <label for="">Unesi napon:</label>
+                <input type="text">
+                <br>
+                <button id="btnOHMOV">Izračunaj struju</button>
+                <p>Struja :</p>
+                <p id="OHMOVrez"></p>
+
+                <image></image>
+            </form>
+        </div>
+
+        <div>
+            <h3>Dijelilo napona</h3>
+            <form id ="forma2">
+                <label for="">Unesi R1:</label>
+                <input>
+                <br>
+                <label >Unesi R2:</label>
+                <input></input>
+                <br>
+                <label >Unesi Uul:</label>
+                <input></input>
+                <br>
+                <button id="btnDiff">Izračunaj Uiz</button>
+                <p>Uiz :</p>
+                <p id="Diffrez"></p>
+
+                <image></image>
+            </form>
+        </div>
+
+        <div>
+            
+            <!-- <form>
+                <input type="radio" id="Sotp" onclick="SOTPfunc(this.value)" value="1">
+                <label for="Sotp">Serijsko spajanje otpornika</label><br>
+                <input type="radio" id="Potp"  onclick="SOTPfunc(this)" value="2">
+                <label for="Potp">Paralelno spajanje otpornika</label><br>  
+                <input type="radio" id="Skon" onclick="SOTPfunc(this)" value="3">
+                <label for="Skon">Serijsko spajanje kondezatora</label><br>
+                <input type="radio" id="Skon" onclick="SOTPfunc(this)" value="4">
+                <label for="Skon">Paralelno spajanje kondezatora</label><br>
+                <br>
+                
+                <label id="unosOdbair1">Unesi R1:</label>
+                <input>
+                <br>
+                <label id="unosOdbair2">Unesi R2:</label>
+                <input>
+                <br>
+
+                <input type="submit" value="Izračunaj : ">
+            </form> -->
+
+            <form>
+            <input type="radio" id="od1" onclick="odabir(this.value)" value="1">Serijsko spajanje otpornika<br>
+            <input type="radio" id="od2" onclick="odabir(this.value)" value="2">Paralelno spajanje otpornika<br>
+            <input type="radio" di="od3" onclick="odabir(this.value)" value="3">Paralelno spajanje kondezatora<br>
+            <input type="radio" id="od4" onclick="odabir(this.value)" value="4">Paralelno spajanje kondezatora<br>
+
+            <br>
+
+                <label id="unosOdbair1">Unesi R1:</label>
+                <input>
+                <br>
+                <label id="unosOdbair2">Unesi R2:</label>
+                <input>
+                <br>
+
+                <input type="submit" value="Izračunaj : ">
+                <label></label>
+            </form>
+        </div>
+
+        <div>
+            <h3> Računanje induktiviteta zračnog svitka
+            </h3>
+        </div>
+
+        <div>
+            <h3>Računanje induktivnog otpornika</h3>
+        </div>
+
+
+        <div>
+            <h3>Računanje kapacitivnog otpora</h3>
+        </div>
+         <script src="index.js"></script>
+</body>
+</html>
