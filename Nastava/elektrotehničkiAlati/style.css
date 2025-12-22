@@ -1,7 +1,158 @@
+ body {
+            background: linear-gradient(115deg, #0f0b8c, #77dcf5);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
+        .sidebar {
+            background: linear-gradient(115deg, #0c0014, #117aca);
+            min-height: 100vh;
+            box-shadow: 4px 0 15px rgba(0,0,0,0.3);
+        }
 
+        .sidebar .nav-link {
+            color: rgba(255,255,255,0.85);
+            padding: 15px 20px;
+            transition: all 0.3s;
+            border-left: 3px solid transparent;
+            font-weight: 500;
+        }
 
-#forma2{
-    padding: 2%;
-}
+        .sidebar .nav-link:hover {
+            color: white;
+            background: rgba(255,255,255,0.1);
+            border-left-color: #fdeff9;
+        }
 
+        .sidebar .nav-link.active {
+            color: white;
+            background: rgba(255,255,255,0.15);
+            border-left-color: #fdeff9;
+        }
+
+        .sidebar h4 {
+            color: #fdeff9;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .main-content {
+            padding: 30px;
+        }
+
+        .calculator-card {
+            background: linear-gradient(115deg, #ffffff, #d4dfed);
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .calculator-card h2 {
+            background: linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 25px;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: #2d3436;
+            margin-bottom: 8px;
+        }
+
+        .form-control {
+            border: 2px solid rgba(168, 192, 255, 0.4);
+            border-radius: 10px;
+            padding: 12px;
+            transition: all 0.3s;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .form-control:focus {
+            border-color: #e5c185;
+            background: white;
+        }
+
+        .btn-calculate {
+            background: linear-gradient(115deg, #28a5de, #ffffff);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 10px;
+            transition: all 0.3s;
+            color: black    ;
+        }
+
+        .btn-calculate:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(192, 108, 132, 0.4);
+        }
+
+        .result-box {
+            background: linear-gradient(115deg, #0f0b8c, #77dcf5);
+            color: white;
+            padding: 22px;
+            border-radius: 12px;
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 0 6px 20px #e5c185;
+        }
+
+        .formula-box {
+            background: linear-gradient(135deg, rgba(168, 192, 255, 0.2) 0%, rgba(63, 43, 150, 0.15) 100%);
+            padding: 18px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #f0daa5;
+            color: #2d3436;
+        }
+
+        .formula-box strong {
+            color: #008585;
+            font-weight: 700;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+            animation: fadeIn 0.4s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .radio-group {
+            margin: 20px 0;
+        }
+
+        .radio-group label {
+            margin-left: 8px;
+            color: #2d3436;
+            font-weight: 500;
+        }
+
+        .form-check-input:checked {
+            background: #f0daa5;
+        }
+
+        .form-check-input:focus {
+            box-shadow: 0 0 0 0.25rem #f0daa5;
+        }
+
+        .sidebar .nav-link i {
+            margin-right: 8px;
+            width: 20px;
+            text-align: center;
+        }

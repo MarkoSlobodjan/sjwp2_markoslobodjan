@@ -3,106 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elektrotehnički alati</title>
+    <title>Elektrotehnički Kalkulator</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link
+      href="style.css"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-        <h1>Elektrotehnički alati</h1>
-        <div>
-            <h3>OHMOV ZAKON</h3>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 col-lg-2 px-0 sidebar">
+                <div class="p-3">
+                    <h4 class="text-center mb-4 mt-2">
+                        <i class="fas fa-bolt"></i> Elektrotehnički Alati
+                    </h4>
+                    <nav class="nav flex-column">
+                        <a class="nav-link active" href="#" data-section="ohmov">
+                            <i class="fas fa-calculator"></i> Ohmov Zakon
+                        </a>
+                        <a class="nav-link" href="#" data-section="djelilo">
+                            <i class="fas fa-divide"></i> Dijelilo Napona
+                        </a>
+                        <a class="nav-link" href="#" data-section="serijski-paralelni">
+                            <i class="fas fa-project-diagram"></i> Serijski/Paralelni Spojevi
+                        </a>
+                        <a class="nav-link" href="#" data-section="induktivitet">
+                            <i class="fas fa-circle-notch"></i> Induktivitet Zračnog Svitka
+                        </a>
+                        <a class="nav-link" href="#" data-section="induktivni-otpor">
+                            <i class="fas fa-wave-square"></i> Induktivni Otpor
+                        </a>
+                        <a class="nav-link" href="#" data-section="kapacitivni-otpor">
+                            <i class="fas fa-charging-station"></i> Kapacitivni Otpor
+                        </a>
+                    </nav>
+                </div>
+            </div>
 
-            <form id="forma">
-                <label>Unesi otpor:</label>
-                <input>
-                <br>
-                <label for="">Unesi napon:</label>
-                <input type="text">
-                <br>
-                <button id="btnOHMOV">Izračunaj struju</button>
-                <p>Struja :</p>
-                <p id="OHMOVrez"></p>
-
-                <image></image>
-            </form>
-        </div>
-
-        <div>
-            <h3>Dijelilo napona</h3>
-            <form id ="forma2">
-                <label for="">Unesi R1:</label>
-                <input>
-                <br>
-                <label >Unesi R2:</label>
-                <input></input>
-                <br>
-                <label >Unesi Uul:</label>
-                <input></input>
-                <br>
-                <button id="btnDiff">Izračunaj Uiz</button>
-                <p>Uiz :</p>
-                <p id="Diffrez"></p>
-
-                <image></image>
-            </form>
-        </div>
-
-        <div>
+            <div class="col-md-9 col-lg-10 main-content">
             
-            <!-- <form>
-                <input type="radio" id="Sotp" onclick="SOTPfunc(this.value)" value="1">
-                <label for="Sotp">Serijsko spajanje otpornika</label><br>
-                <input type="radio" id="Potp"  onclick="SOTPfunc(this)" value="2">
-                <label for="Potp">Paralelno spajanje otpornika</label><br>  
-                <input type="radio" id="Skon" onclick="SOTPfunc(this)" value="3">
-                <label for="Skon">Serijsko spajanje kondezatora</label><br>
-                <input type="radio" id="Skon" onclick="SOTPfunc(this)" value="4">
-                <label for="Skon">Paralelno spajanje kondezatora</label><br>
-                <br>
-                
-                <label id="unosOdbair1">Unesi R1:</label>
-                <input>
-                <br>
-                <label id="unosOdbair2">Unesi R2:</label>
-                <input>
-                <br>
+                <div class="section active" id="ohmov">
+                    <div class="calculator-card">
+                        <h2><i class="fas fa-calculator"></i> Ohmov Zakon</h2>
+                        <div class="formula-box">
+                            <strong>Formula:</strong> I = U / R
+                        </div>
+                        <form id="formOhmov">
+                            <div class="mb-3">
+                                <label class="form-label">Otpor (R) [Ω]:</label>
+                                <input type="number" class="form-control" id="otpor" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Napon (U) [V]:</label>
+                                <input type="number" class="form-control" id="napon"  required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-calculate">
+                                <i class="fas fa-calculator"></i> Izračunaj Struju
+                            </button>
+                        </form>
+                        <div id="rezOhmov" class="result-box" style="display:none;"></div>
+                    </div>
+                </div>
 
-                <input type="submit" value="Izračunaj : ">
-            </form> -->
+            
+                <div class="section" id="djelilo">
+                    <div class="calculator-card">
+                        <h2><i class="fas fa-divide"></i> Dijelilo Napona</h2>
+                        <div class="formula-box">
+                            <strong>Formula:</strong> U<sub>iz</sub> = U<sub>ul</sub> × (R2 / (R1 + R2))
+                        </div>
+                        <form id="formDjelilo">
+                            <div class="mb-3">
+                                <label class="form-label">R1 [Ω]:</label>
+                                <input type="number" class="form-control" id="r1"  required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">R2 [Ω]:</label>
+                                <input type="number" class="form-control" id="r2" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Ulazni Napon (U<sub>ul</sub>) [V]:</label>
+                                <input type="number" class="form-control" id="uul" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-calculate">
+                                <i class="fas fa-calculator"></i> Izračunaj U<sub>iz</sub>
+                            </button>
+                        </form>
+                        <div id="rezDjelilo" class="result-box" style="display:none;"></div>
+                    </div>
+                </div>
 
-            <form>
-            <input type="radio" id="od1" onclick="odabir(this.value)" value="1">Serijsko spajanje otpornika<br>
-            <input type="radio" id="od2" onclick="odabir(this.value)" value="2">Paralelno spajanje otpornika<br>
-            <input type="radio" di="od3" onclick="odabir(this.value)" value="3">Paralelno spajanje kondezatora<br>
-            <input type="radio" id="od4" onclick="odabir(this.value)" value="4">Paralelno spajanje kondezatora<br>
+                <div class="section" id="serijski-paralelni">
+                    <div class="calculator-card">
+                        <h2><i class="fas fa-project-diagram"></i> Serijski/Paralelni Spojevi</h2>
+                        <div class="radio-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="tipSpoja" id="serijskiOtp" value="ser-otp" checked>
+                                <label class="form-check-label" for="serijskiOtp">
+                                    Serijsko spajanje otpornika (R<sub>ukupno</sub> = R1 + R2)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="tipSpoja" id="paralelniOtp" value="par-otp">
+                                <label class="form-check-label" for="paralelniOtp">
+                                    Paralelno spajanje otpornika (1/R<sub>ukupno</sub> = 1/R1 + 1/R2)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="tipSpoja" id="serijskiKond" value="ser-kond">
+                                <label class="form-check-label" for="serijskiKond">
+                                    Serijsko spajanje kondenzatora (1/C<sub>ukupno</sub> = 1/C1 + 1/C2)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="tipSpoja" id="paralelniKond" value="par-kond">
+                                <label class="form-check-label" for="paralelniKond">
+                                    Paralelno spajanje kondenzatora (C<sub>ukupno</sub> = C1 + C2)
+                                </label>
+                            </div>
+                        </div>
+                        <form id="formSpoj">
+                            <div class="mb-3">
+                                <label class="form-label" id="labelSpoj1">Vrijednost 1:</label>
+                                <input type="number" class="form-control" id="val1" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" id="labelSpoj2">Vrijednost 2:</label>
+                                <input type="number" class="form-control" id="val2" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-calculate">
+                                <i class="fas fa-calculator"></i> Izračunaj
+                            </button>
+                        </form>
+                        <div id="rezSpoj" class="result-box" style="display:none;"></div>
+                    </div>
+                </div>
 
-            <br>
+                <div class="section" id="induktivitet">
+                    <div class="calculator-card">
+                        <h2><i class="fas fa-circle-notch"></i> Induktivitet Zračnog Svitka</h2>
+                        <div class="formula-box">
+                            <strong>Formula:</strong> L = (μ₀ × N² × A) / l<br>
+                            <small>gdje je μ₀ = 4π × 10⁻⁷ H/m</small>
+                        </div>
+                        <form id="formInduktivitet">
+                            <div class="mb-3">
+                                <label class="form-label">Broj namotaja (N):</label>
+                                <input type="number" class="form-control" id="namotaji"  required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Površina presjeka (A) [m²]:</label>
+                                <input type="number" class="form-control" id="povrsina"  required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Duljina svitka (l) [m]:</label>
+                                <input type="number" class="form-control" id="duljina"  required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-calculate">
+                                <i class="fas fa-calculator"></i> Izračunaj L
+                            </button>
+                        </form>
+                        <div id="rezInduktivitet" class="result-box" style="display:none;"></div>
+                    </div>
+                </div>
 
-                <label id="unosOdbair1">Unesi R1:</label>
-                <input>
-                <br>
-                <label id="unosOdbair2">Unesi R2:</label>
-                <input>
-                <br>
+        
+                <div class="section" id="induktivni-otpor">
+                    <div class="calculator-card">
+                        <h2><i class="fas fa-wave-square"></i> Induktivni Otpor</h2>
+                        <div class="formula-box">
+                            <strong>Formula:</strong> X<sub>L</sub> = 2πfL = ωL
+                        </div>
+                        <form id="formInduktivniOtpor">
+                            <div class="mb-3">
+                                <label class="form-label">Frekvencija (f) [Hz]:</label>
+                                <input type="number" class="form-control" id="frekvencija"  required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Induktivitet (L) [H]:</label>
+                                <input type="number" class="form-control" id="induktivitet"  required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-calculate">
+                                <i class="fas fa-calculator"></i> Izračunaj X<sub>L</sub>
+                            </button>
+                        </form>
+                        <div id="rezInduktivniOtpor" class="result-box" style="display:none;"></div>
+                    </div>
+                </div>
 
-                <input type="submit" value="Izračunaj : ">
-                <label></label>
-            </form>
+        
+                <div class="section" id="kapacitivni-otpor">
+                    <div class="calculator-card">
+                        <h2><i class="fas fa-charging-station"></i> Kapacitivni Otpor</h2>
+                        <div class="formula-box">
+                            <strong>Formula:</strong> X<sub>C</sub> = 1 / (2πfC) = 1 / (ωC)
+                        </div>
+                        <form id="formKapacitivniOtpor">
+                            <div class="mb-3">
+                                <label class="form-label">Frekvencija (f) [Hz]:</label>
+                                <input type="number" class="form-control" id="frekvencijaC" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Kapacitivnost (C) [F]:</label>
+                                <input type="number" class="form-control" id="kapacitivnost"  required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-calculate">
+                                <i class="fas fa-calculator"></i> Izračunaj X<sub>C</sub>
+                            </button>
+                        </form>
+                        <div id="rezKapacitivniOtpor" class="result-box" style="display:none;"></div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
 
-        <div>
-            <h3> Računanje induktiviteta zračnog svitka
-            </h3>
-        </div>
-
-        <div>
-            <h3>Računanje induktivnog otpornika</h3>
-        </div>
-
-
-        <div>
-            <h3>Računanje kapacitivnog otpora</h3>
-        </div>
-         <script src="index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
+
+
