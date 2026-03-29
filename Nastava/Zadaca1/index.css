@@ -101,7 +101,7 @@
     }
     nav a:hover { color: var(--text-main); }
  
-    /* ── HERO ── */
+
     .hero {
       position: relative;
       padding: 5rem 2rem 4rem;
@@ -205,7 +205,7 @@
     }
     .sort-select:focus { border-color: var(--accent); }
  
-    /* ── CARD ── */
+  
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -333,7 +333,7 @@
     }
     .dot { color: rgba(255,255,255,.2); }
  
-    /* ── MODAL ── */
+  
     .modal-backdrop {
       display: none;
       position: fixed; inset: 0; z-index: 500;

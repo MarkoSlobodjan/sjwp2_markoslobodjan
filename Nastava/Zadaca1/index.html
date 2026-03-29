@@ -18,9 +18,7 @@
   </a>
   <nav class="d-none d-md-flex gap-1">
     <a href="#">Home</a>
-    <a href="#">Novo</a>
-    <a href="#">Popularno</a>
-    <a href="#">Watchlist</a>
+
   </nav>
   <div class="search-wrap">
     <svg class="s-icon" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
@@ -28,14 +26,14 @@
   </div>
 </header>
  
-<!-- HERO -->
+
 <section class="hero">
   <div class="hero-glow"></div>
-  <h1>YOUR UNIVERSE OF<br/><em>ENTERTAINMENT</em></h1>
-  <p>Movies, series, and games — all in one place. Explore thousands of titles across every genre.</p>
+  <h1>Tvoj svijet<br/><em>Zabave</em></h1>
+  <p>Filmovi, serjije i video igre  — Sve na jednom mjestu.</p>
 </section>
  
-<!-- TABS -->
+
 <div class="tabs-bar" id="tabsBar">
   <button class="tab-btn active" data-cat="movies">Filmovi <span class="tab-badge">20</span></button>
   <button class="tab-btn" data-cat="series">Serije <span class="tab-badge">20</span></button>
@@ -58,13 +56,16 @@
  
 
 <footer>
-  <p>© 2026 <strong>Moviemind</strong>. Built for entertainment lovers worldwide.</p>
+  <p>© 2026 <strong>Moviemind</strong>. Marko Slobođan 4.B Tehnička škola Slavonski Brod</p>
 </footer>
  
-<!-- MODAL -->
-<div class="modal-backdrop" id="modalBackdrop">
+
+<!-- <div class="modal-backdrop" id="modalBackdrop">
   <div class="modal-box" id="modalBox">
-    <div class="modal-hero" id="modalHero"></div>
+    <div class="modal-hero" id="modalHero">
+      <img class="modal-hero-img" id="modalHeroImg" src="" alt="" style="width:100%;height:100%;object-fit:cover;">
+      <div class="modal-hero-gradient"></div>
+    </div>
     <button class="modal-close" id="modalClose">✕</button>
     <div class="modal-body-wrap">
       <div class="modal-tags" id="modalTags"></div>
@@ -78,7 +79,41 @@
       </div>
     </div>
   </div>
+</div> -->
+
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal-box" id="modalBox">
+    
+
+    <div class="modal-hero" id="modalHero">
+      <img class="modal-hero-img" id="modalHeroImg" src="" alt="">
+      <div class="modal-hero-gradient"></div>
+      
+  
+      <img class="modal-poster" id="modalPoster" src="" alt="">
+    </div>
+    
+ 
+    <button class="modal-close" id="modalClose">✕</button>
+    
+  
+    <div class="modal-body-wrap">
+      <div class="modal-tags" id="modalTags"></div>
+      <div class="modal-title" id="modalTitle"></div>
+      <div class="modal-meta" id="modalMeta"></div>
+      <div class="modal-desc" id="modalDesc"></div>
+      <div class="modal-info-grid" id="modalInfoGrid"></div>
+      <div class="modal-actions">
+        <button class="btn-watch">Gledaj sad!</button>
+        <button class="btn-list">Dodaj na listu gledanja</button>
+      </div>
+    </div>
+    
+  </div>
 </div>
+
+
+
 
 <script src="index.js"></script>
 
